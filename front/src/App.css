@@ -1,0 +1,10 @@
+:root {
+  --negro: #2B2D42;
+  --verde: #7CFFC4;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background:  var(--negro);
+}
