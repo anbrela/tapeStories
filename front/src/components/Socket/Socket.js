@@ -1,5 +1,10 @@
-import io, { Socket } from "socket.io-client";
+import io from "socket.io-client";
 
-let socket = io("//localhost:4000");
+const socket = io("http://localhost:4000", {
+  withCredentials: true,
+  extraHeaders: {
+    "my-custom-header": "abcd"
+  }
+});
 
 export default socket;

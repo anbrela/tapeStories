@@ -4,8 +4,10 @@ const app = express();
 const server = http.createServer(app);
 
 
-const socketio = require("socket.io");
-const io = socketio(server);
+
+
+const io = require('socket.io')(server, { origins: '*:*'});
+
 
 io.on("connection", socket => {
 
