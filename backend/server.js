@@ -17,6 +17,7 @@ io.on("connection", (socket) => {
 
   socket.on("mensaje", (nombre, message) => {
     io.emit("messages", { nombre, message });
+    console.log(message);
   });
 
   socket.on("disconnect", () => {

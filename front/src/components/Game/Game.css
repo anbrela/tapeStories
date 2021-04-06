@@ -37,14 +37,80 @@ justify-content: center;
 }
 
 
-.chat {
+.chat-wrapper {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+  }
+
+
+
+.points {
+width: 30%;
+height: 100%;
 }
 
-.chat p {
-    color: white;
+
+  
+  .chat {
+    width: 70%;
+    position: relative;
+    background: white;
+  }
+
+  .send {
+      width: 100%;
+      position: absolute;
+      bottom: 10px;
+      height: 50px;
+  }
+
+  .send form .btn {
+    width: 100px;
+    height: 50px;
+    background: var(--verde);
+    border: 1px solid grey;
+    border-radius: 0px;
 }
+
+.send form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.send form input {
+    width: 100%;
+}
+
+.send form input::placeholder {
+    padding-left: 10px;
+} 
+
+.send form input:focus {
+    padding-left: 10px;
+}
+
+.message {
+    width: 300px;
+    min-height: 50px;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+}
+
+.nombre {
+    background: var(--negro);
+    color: white;
+    padding: 2px;
+    font-size: 1.2em;
+    
+}
+
+.mensaje-wrap {
+    margin-top: 20px;
+}
+

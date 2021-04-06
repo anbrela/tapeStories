@@ -29,7 +29,7 @@ const Game = () => {
   const sendMessage = (e) => {
     e.preventDefault();
     socket.emit("mensaje", nombre, message);
-    e.target.reset();
+
   };
 
   const register = (e) => {
@@ -56,18 +56,24 @@ const Game = () => {
       ) : null}
 
       {registrado ? (
-        <div className="chat">
+        <div className="chat-wrapper">
+          <div className="points"> </div>
+          <div className="chat">
           {messages.map((e, i) => (
-            <div key={i}>
-              {e.nombre + ":"} <br /> {e.message}
+            <div className="message" key={i}>
+             <span className="nombre"> {e.nombre + ":"}</span> <br /> 
+             
+             <span className="mensaje-wrap">{e.message}</span>
+             
             </div>
           ))}
-
-          <form onSubmit={sendMessage}>
-            <label>Mensaje</label>
-            <input onChange={handleChangeMessage}></input>
-            <button type="reset">Enviar</button>
+          <div className="send">
+          <form>
+            <input placeholder="Introduce tu pregunta" onChange={handleChangeMessage}></input>
+            <button className="btn" onClick={sendMessage}>Enviar</button>
           </form>
+          </div>
+        </div>
         </div>
       ) : null}
     </div>
