@@ -1,116 +1,312 @@
+:root {
+  --verde: #caffb9;
+  --rojo: #d84727;
+  --naranja: #ef8354;
+  --negro: #403d58;
+}
+
 .container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
 .name {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .name form input {
-    width: 300px;
-    height: 40px;
-    border-radius: 5px;
-    border: 2px solid var(--verde);
-    background: transparent;
-    color: white;
-    margin-right: 10px;
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid var(--verde);
+  background: transparent;
+  color: white;
+  margin-right: 10px;
 }
 
 .name form input::placeholder {
-    color: white;
-    font-size: 14px;
+  color: white;
+  font-size: 14px;
 }
 
 .btn {
-    width: 100px;
-    height: 40px;
-    background: var(--verde);
-    border: none;
-    border-radius: 10px;
+  width: 100px;
+  height: 40px;
+  background: var(--verde);
+  border: none;
+  border-radius: 10px;
 }
-
 
 .chat-wrapper {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-  }
-
-
-
-.points {
-width: 30%;
-height: 100%;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
+.points {
+  width: 60%;
+  height: 100%;
+}
 
-  
-  .chat {
-    width: 70%;
-    position: relative;
-    background: white;
-  }
+.chat {
+  width: 40%;
+  max-height: 100vh;
+  position: relative;
+  background: white;
+  overflow: scroll;
+}
 
-  .send {
-      width: 100%;
-      position: absolute;
-      bottom: 10px;
-      height: 50px;
-  }
+.divRef {
+  margin-top: 100px;
+}
 
-  .send form .btn {
-    width: 100px;
-    height: 50px;
-    background: var(--verde);
-    border: 1px solid grey;
-    border-radius: 0px;
+.send {
+  width: 40%;
+  position: fixed;
+  z-index: 3;
+  bottom: 0px;
+  height: 60px;
+}
+
+.send form .btn {
+  width: 100px;
+  height: 60px;
+  background: var(--verde);
+  border: 1px solid grey;
+  border-left: 0px;
+  border-radius: 0px;
+  cursor: pointer;
 }
 
 .send form {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .send form input {
-    width: 100%;
+  width: 100%;
 }
 
 .send form input::placeholder {
-    padding-left: 10px;
-} 
+  padding-left: 10px;
+}
 
 .send form input:focus {
-    padding-left: 10px;
+  padding-left: 10px;
+}
+
+.container-messages {
+  padding-left: 30px;
 }
 
 .message {
-    width: 300px;
-    min-height: 50px;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 10px;
-    background: white;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-
+  width: 300px;
+  height: 100%;
+  min-height: 30px;
+  border-radius: 10px;
+  margin: 10px;
+  margin-top: -10px;
+  background: white;
+  padding: 5px;
+  padding-left: 10px;
+  margin-left: 70px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  display: flex;
+  align-items: center;
 }
 
+.green {
+  width: 300px;
+  height: 100%;
+  min-height: 30px;
+  border-radius: 10px;
+  margin: 10px;
+  margin-top: -10px;
+  background: var(--verde);
+  padding: 5px;
+  padding-left: 10px;
+  margin-left: 70px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  display: flex;
+  align-items: center;
+}
+
+.red {
+  width: 300px;
+  height: 100%;
+  min-height: 30px;
+  border-radius: 10px;
+  margin: 10px;
+  margin-top: -10px;
+  background: var(--rojo);
+  padding: 5px;
+  padding-left: 10px;
+  margin-left: 70px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  display: flex;
+  align-items: center;
+}
+
+.orange {
+  width: 300px;
+  height: 100%;
+  min-height: 30px;
+  border-radius: 10px;
+  margin: 10px;
+  margin-top: -10px;
+  background: var(--naranja);
+  padding: 5px;
+  padding-left: 10px;
+  margin-left: 70px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  display: flex;
+  align-items: center;
+}
+
+.black {
+  width: 300px;
+  height: 100%;
+  min-height: 30px;
+  border-radius: 10px;
+  margin: 10px;
+  margin-top: -10px;
+  background: var(--negro);
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  margin-left: 70px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  display: flex;
+  align-items: center;
+}
+
+.mensaje-wrap span {
+  font-size: 20px;
+}
+
+.name-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.name-wrap img {
+  width: 50px;
+  margin: 10px;
+}
 .nombre {
-    background: var(--negro);
-    color: white;
-    padding: 2px;
-    font-size: 1.2em;
-    
+  font-size: 20px;
+  text-align: center;
 }
 
-.mensaje-wrap {
-    margin-top: 20px;
+.leyenda {
+  display: flex;
+  padding: 10px;
+  justify-content: flex-end;
 }
 
+.verde::before {
+  content: "";
+  margin-left: -20px;
+  margin-top: 6px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  background: var(--verde);
+}
+
+.rojo::before {
+  content: "";
+  margin-left: -20px;
+  margin-top: 6px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  background: var(--rojo);
+}
+
+.naranja::before {
+  content: "";
+  margin-left: -20px;
+  margin-top: 6px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  background: var(--naranja);
+}
+
+.negro::before {
+  content: "";
+  margin-left: -20px;
+  margin-top: 6px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  background: var(--negro);
+}
+
+.leyenda div {
+  padding-right: 30px;
+}
+
+.points {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.points h2 {
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  line-height: 20px;
+  letter-spacing: 3px;
+  font-family: "Flix";
+}
+
+.image-points {
+  display: flex;
+  justify-content: center;
+}
+
+.image-points img {
+  border: 2px solid white;
+  border-radius: 10px;
+  width: 500px;
+}
+
+.description-points p {
+  color: white;
+  font-size: 25px;
+  padding: 10px;
+  text-align: center;
+}
+
+.ranking {
+  width: 300px;
+  background: white;
+  height: 400px;
+  border-radius: 0px 5px;
+  padding-left: 20px;
+  overflow: scroll;
+}
+
+.ranking h3 {
+  font-size: 25px;
+}
+
+.popup {
+  width: 70%;
+  height: 70%;
+  background: white;
+}

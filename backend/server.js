@@ -13,15 +13,19 @@ const io = require("socket.io")(server, {
 io.on("connection", (socket) => {
   socket.on("conectado", (nombre) => {
     console.log("usuario conectado", nombre);
+    io.emit("usuarios", nombre);
   });
 
-  socket.on("mensaje", (nombre, message) => {
-    io.emit("messages", { nombre, message });
-    console.log(message);
+  socket.on("mensaje", (message) => {
+    io.emit("messages", message);
   });
 
-  socket.on("disconnect", () => {
-    io.emit("messages", { nombre: "server", nombre: "Ha abandonado la sala" });
+  socket.on("editMensaje", (message) => {
+    io.emit("editMessages", message);
+  });
+
+  socket.on("disconnect", (nombre) => {
+    io.emit("messages", { body: nombre + " Ha abandonado la sala" });
   });
 });
 

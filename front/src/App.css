@@ -1,12 +1,18 @@
 :root {
-  --negro: #2B2D42;
-  --verde: #7CFFC4;
+  --negro: #2b2d42;
+  --verde: #7cffc4;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background:  var(--negro);
+  background: var(--negro);
+  font-family: "New Tegomin", serif;
 }
 
+@font-face {
+  font-family: "Flix";
+  src: url(fonts/Flix-Normal.ttf);
+}
 
+@import url("https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap");
