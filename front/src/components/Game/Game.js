@@ -3,12 +3,14 @@ import socket from "../Socket/Socket";
 import "./Game.css";
 import avatar from "../../img/man.svg";
 import hotel from "../../img/hotel.jpeg";
+import loading from "../../img/loading.svg";
+import send from "../../img/send.svg";
 import { v4 as uuidv4 } from "uuid";
 
 const rightQuestion = "green";
 const wrongQuestion = "red";
-const questionYet = "orange";
-const irrelevant = "black";
+const questionYet = "black";
+const irrelevant = "orange";
 
 const Game = () => {
   const [message, setMessage] = useState("");
@@ -118,6 +120,7 @@ const Game = () => {
       status: "message",
     };
     socket.emit("mensaje", msg);
+    setMessage("");
   };
 
   const register = (e) => {
@@ -138,10 +141,11 @@ const Game = () => {
 
   return (
     <div className="container">
-      <div className="image"></div>
-
       {!registrado ? (
         <div className="name">
+          <h1>
+            Dark <span>Stories</span>{" "}
+          </h1>
           <form onSubmit={register}>
             <input
               value={nombre}
@@ -156,7 +160,11 @@ const Game = () => {
       {registrado ? (
         ready ? (
           <div className="chat-wrapper">
-            <div className="logo"> </div>
+            <div className="logo">
+              <h2>
+                Dark <span>Stories</span>{" "}
+              </h2>
+            </div>
             <div className="points">
               <h2>El Hotel</h2>
               <div className="image-points">
@@ -195,7 +203,7 @@ const Game = () => {
                         <span>{message.body}</span>
                       </div>
                     </div>
-                    {nombre == "admin" ? (
+                    {nombre === "admin" ? (
                       <div className="botones-message">
                         <button onClick={handleMarkRightQuestion(message)}>
                           SI
@@ -219,20 +227,26 @@ const Game = () => {
                 <form>
                   <input
                     placeholder="Introduce tu pregunta"
+                    value={message}
                     onChange={handleChangeMessage}
                   ></input>
                   <button className="btn" onClick={sendMessage}>
-                    Enviar
+                    <img src={send} alt="" />
                   </button>
                 </form>
               </div>
             </div>
           </div>
         ) : (
-          <div className="popup">
-            <h3>Estamos preparando el juego</h3>
-            <p>{"Jugadores conectados " + usuarios.length}</p>
-            <button onClick={handleReady}> START </button>
+          <div className="wrapper-popup">
+            <div className="popup">
+              <h3>Estamos preparando el juego</h3>
+              <img src={loading} alt="" />
+              <p>{"Jugadores conectados " + usuarios.length + "/20"}</p>
+              <button className="btn" onClick={handleReady}>
+                Listo
+              </button>
+            </div>
           </div>
         )
       ) : null}
