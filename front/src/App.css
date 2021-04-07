@@ -15,4 +15,9 @@ body {
   src: url(fonts/Flix-Normal.ttf);
 }
 
+@font-face {
+  font-family: "Boycott";
+  src: url(fonts/BOYCOTT_.TTF);
+}
+
 @import url("https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap");
