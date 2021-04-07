@@ -12,7 +12,7 @@ const io = require("socket.io")(server, {
 
 io.on("connection", (socket) => {
   socket.on("conectado", (nombre) => {
-    console.log("usuario conectado", nombre);
+    console.log("usuario conectado nuevo", nombre);
     io.emit("usuarios", nombre);
   });
 
