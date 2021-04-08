@@ -29,8 +29,4 @@ io.on("connection", (socket) => {
   });
 });
 
-<<<<<<< HEAD
 server.listen(4001, () => console.log("server started on port 4001"));
-=======
-server.listen(4001, () => console.log("server started on port 4000"));
->>>>>>> 2b7610f35c79b48877aa850798a918262537ccd2
