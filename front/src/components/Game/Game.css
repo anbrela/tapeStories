@@ -67,6 +67,7 @@
   background: var(--verde);
   border: none;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .chat-wrapper {
@@ -94,8 +95,8 @@
 }
 
 .send {
-  width: 40%;
-  position: fixed;
+  width: 100%;
+  position: absolute;
   z-index: 3;
   bottom: 0px;
   height: 90px;
@@ -106,7 +107,7 @@
 }
 
 .send form .btn {
-  width: 100px;
+  width: 20%;
   height: 60px;
   background: none;
   border: none;
@@ -120,13 +121,13 @@
 }
 
 .send form {
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
 .send form input {
-  width: 100%;
-  min-width: 550px;
+  width: 80%;
   border: none;
   margin-left: 20px;
   margin-right: 20px;
@@ -519,7 +520,7 @@
   }
 
   .send form input {
-    width: 250px;
+    width: 80%;
     padding: 0px;
     border-radius: 13px;
     border: none;
@@ -541,6 +542,7 @@
     height: 100%;
     background: none;
     border: none;
+    cursor: pointer;
   }
 
   .send form .btn:focus {
